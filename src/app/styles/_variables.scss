@@ -1,0 +1,81 @@
+// ============================================================
+// COLORS
+// ============================================================
+
+// Base
+$color-bg:            #050508;
+$color-bg-secondary:  #0d0d14;
+$color-surface:       #12121c;
+$color-surface-alt:   #1a1a28;
+
+// Accent
+$color-cyan:          #7DF9FF;
+$color-purple:        #B388FF;
+$color-magenta:       #E040FB;
+
+// Text
+$color-text-primary:  #F0F0FF;
+$color-text-secondary:#9090B0;
+$color-text-muted:    #50506A;
+
+// Borders
+$color-border:        rgba(125, 249, 255, 0.1);
+$color-border-hover:  rgba(125, 249, 255, 0.3);
+
+// Glow
+$glow-cyan:           rgba(125, 249, 255, 0.15);
+$glow-purple:         rgba(179, 136, 255, 0.15);
+$glow-magenta:        rgba(224, 64, 251, 0.12);
+
+// ============================================================
+// GRADIENTS
+// ============================================================
+
+$gradient-primary:    linear-gradient(135deg, $color-cyan, $color-purple);
+$gradient-surface:    linear-gradient(180deg, $color-surface, $color-bg);
+
+// ============================================================
+// TYPOGRAPHY
+// ============================================================
+
+$font-display:  'Your Display Font', sans-serif;
+$font-body:     'Your Body Font', monospace;
+
+$fs-xs:   0.75rem;
+$fs-sm:   0.875rem;
+$fs-base: 1rem;
+$fs-lg:   1.25rem;
+$fs-xl:   1.5rem;
+$fs-2xl:  2rem;
+$fs-3xl:  3rem;
+$fs-4xl:  4.5rem;
+
+// ============================================================
+// SPACING
+// ============================================================
+
+$spacing-xs:  0.25rem;
+$spacing-sm:  0.5rem;
+$spacing-md:  1rem;
+$spacing-lg:  2rem;
+$spacing-xl:  4rem;
+$spacing-2xl: 8rem;
+
+// ============================================================
+// TRANSITIONS
+// ============================================================
+
+$transition-fast:   0.15s ease;
+$transition-base:   0.3s ease;
+$transition-slow:   0.6s cubic-bezier(0.16, 1, 0.3, 1);
+$transition-cinema: 1s cubic-bezier(0.16, 1, 0.3, 1);
+
+// ============================================================
+// Z-INDEX
+// ============================================================
+
+$z-background: 0;
+$z-content:    1;
+$z-overlay:    10;
+$z-modal:      100;
+$z-toast:      200;
