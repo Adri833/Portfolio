@@ -1,0 +1,35 @@
+@use '../../../styles/mixins' as *;
+@use '../../../styles/breakpoints' as *;
+
+.skills {
+  padding-block: var(--space-5);
+
+  @include respond-up($bp-md) {
+    padding-block: var(--space-7);
+  }
+
+  &__container {
+    @include container;
+  }
+
+  &__groups {
+    display: grid;
+    gap: var(--space-4);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  &__group-title {
+    font-size: var(--fs-base);
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+  }
+}

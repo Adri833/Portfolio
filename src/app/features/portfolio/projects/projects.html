@@ -1,0 +1,44 @@
+<section id="projects" class="projects" aria-labelledby="projects-title">
+  <div class="projects__container">
+    <app-section-title
+      title="Proyectos"
+      description="Una selección de proyectos en los que he trabajado."
+    />
+
+    <div class="projects__grid">
+      @for (project of projects(); track project.id) {
+        <app-card
+          [featured]="!!project.featured"
+          class="projects__item"
+          [class.projects__item--featured]="project.featured"
+        >
+          <div class="projects__thumbnail" aria-hidden="true"></div>
+
+          <div class="projects__body">
+            <h3 class="projects__title">{{ project.title }}</h3>
+            <p class="projects__description">{{ project.description }}</p>
+
+            <ul class="projects__tech">
+              @for (tech of project.technologies; track tech) {
+                <li><app-badge [label]="tech" /></li>
+              }
+            </ul>
+
+            <div class="projects__links">
+              @if (project.demoUrl) {
+                <a class="btn btn--ghost" [href]="project.demoUrl" target="_blank" rel="noopener">
+                  Ver demo
+                </a>
+              }
+              @if (project.repoUrl) {
+                <a class="btn btn--ghost" [href]="project.repoUrl" target="_blank" rel="noopener">
+                  Ver código
+                </a>
+              }
+            </div>
+          </div>
+        </app-card>
+      }
+    </div>
+  </div>
+</section>

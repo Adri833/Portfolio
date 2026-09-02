@@ -1,0 +1,66 @@
+@use '../../../styles/mixins' as *;
+@use '../../../styles/breakpoints' as *;
+
+.projects {
+  padding-block: var(--space-5);
+
+  @include respond-up($bp-md) {
+    padding-block: var(--space-7);
+  }
+
+  &__container {
+    @include container;
+  }
+
+  &__grid {
+    display: grid;
+    gap: var(--space-4);
+    grid-template-columns: 1fr;
+
+    @include respond-up($bp-md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__item--featured {
+    @include respond-up($bp-md) {
+      grid-column: span 2;
+    }
+  }
+
+  &__thumbnail {
+    height: 10rem;
+    background: linear-gradient(145deg, var(--accent), var(--accent-warm));
+  }
+
+  &__body {
+    padding: var(--space-3);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  &__title {
+    font-size: var(--fs-md);
+    font-weight: 600;
+  }
+
+  &__description {
+    color: var(--text-secondary);
+  }
+
+  &__tech {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+  }
+
+  &__links {
+    display: flex;
+    gap: var(--space-3);
+    margin-top: var(--space-1);
+  }
+}

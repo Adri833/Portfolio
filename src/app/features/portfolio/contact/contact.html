@@ -1,0 +1,26 @@
+<section id="contact" class="contact" aria-labelledby="contact-title">
+  <div class="contact__container">
+    <app-section-title
+      title="¿Trabajamos juntos?"
+      description="Escríbeme si quieres hablar de un proyecto o una oportunidad."
+    />
+
+    <div class="contact__actions">
+      <a class="btn btn--primary" [href]="primaryEmail">Escríbeme</a>
+    </div>
+
+    <ul class="contact__links">
+      @for (link of socialLinks(); track link.id) {
+        <li>
+          <a
+            [href]="link.url"
+            [target]="link.platform === 'email' ? null : '_blank'"
+            [rel]="link.platform === 'email' ? null : 'noopener'"
+          >
+            {{ link.label }}
+          </a>
+        </li>
+      }
+    </ul>
+  </div>
+</section>

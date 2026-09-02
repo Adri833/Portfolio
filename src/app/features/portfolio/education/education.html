@@ -1,0 +1,22 @@
+<section id="education" class="education" aria-labelledby="education-title">
+  <div class="education__container">
+    <app-section-title title="Formación" />
+
+    <ul class="education__list">
+      @for (item of education(); track item.id) {
+        <li class="education__item">
+          <span class="education__dates">
+            {{ item.startDate }} – {{ item.endDate ?? 'Actualidad' }}
+          </span>
+          <div class="education__info">
+            <h3 class="education__degree">{{ item.degree }}</h3>
+            <p class="education__institution">{{ item.institution }}</p>
+            @if (item.description) {
+              <p class="education__description">{{ item.description }}</p>
+            }
+          </div>
+        </li>
+      }
+    </ul>
+  </div>
+</section>

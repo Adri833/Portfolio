@@ -1,0 +1,15 @@
+.section-title {
+  margin-bottom: var(--space-5);
+  max-width: 60ch;
+
+  h2 {
+    font-size: var(--fs-lg);
+    font-weight: 600;
+  }
+
+  &__description {
+    margin-top: var(--space-2);
+    color: var(--text-secondary);
+    font-size: var(--fs-md);
+  }
+}

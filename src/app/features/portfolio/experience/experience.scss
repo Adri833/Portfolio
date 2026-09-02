@@ -1,0 +1,85 @@
+@use '../../../styles/mixins' as *;
+@use '../../../styles/breakpoints' as *;
+
+.experience {
+  padding-block: var(--space-5);
+
+  @include respond-up($bp-md) {
+    padding-block: var(--space-7);
+  }
+
+  &__container {
+    @include container;
+  }
+
+  &__timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-left: 2px solid var(--border);
+
+    @include respond-up($bp-md) {
+      margin-left: var(--space-2);
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding: 0 0 var(--space-5) var(--space-4);
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  &__marker {
+    position: absolute;
+    left: -7px;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--bg);
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    margin-bottom: var(--space-2);
+
+    @include respond-up($bp-md) {
+      flex-direction: row;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: var(--space-3);
+    }
+  }
+
+  &__role {
+    font-size: var(--fs-md);
+    font-weight: 600;
+  }
+
+  &__dates {
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    color: var(--text-secondary);
+    white-space: nowrap;
+  }
+
+  &__description {
+    color: var(--text-secondary);
+    max-width: 65ch;
+  }
+
+  &__tech {
+    list-style: none;
+    margin: var(--space-2) 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+  }
+}

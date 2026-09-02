@@ -1,0 +1,35 @@
+<header class="navbar">
+  <div class="navbar__container">
+    <a class="navbar__logo" href="#hero">Adrián Álvarez</a>
+
+    <nav
+      id="primary-navigation"
+      class="navbar__nav"
+      [class.is-open]="isMenuOpen()"
+      aria-label="Navegación principal"
+    >
+      <ul>
+        @for (link of navLinks(); track link.id) {
+          <li>
+            <a [href]="link.href" (click)="closeMenu()">{{ link.label }}</a>
+          </li>
+        }
+      </ul>
+    </nav>
+
+    <div class="navbar__actions">
+      <app-theme-toggle />
+
+      <button
+        class="navbar__toggle"
+        type="button"
+        [attr.aria-expanded]="isMenuOpen()"
+        aria-controls="primary-navigation"
+        (click)="toggleMenu()"
+      >
+        <span class="visually-hidden">{{ isMenuOpen() ? 'Cerrar menú' : 'Abrir menú' }}</span>
+        <span class="navbar__toggle-icon" [class.is-open]="isMenuOpen()"></span>
+      </button>
+    </div>
+  </div>
+</header> 

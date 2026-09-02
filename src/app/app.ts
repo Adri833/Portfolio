@@ -1,13 +1,30 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { ParticleBackground } from "./shared/components/particle-background/particle-background";
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Navbar } from './layout/navbar/navbar';
+import { Hero } from './features/portfolio/hero/hero';
+import { About } from './features/portfolio/about/about';
+import { Skills } from './features/portfolio/skills/skills';
+import { Experience } from './features/portfolio/experience/experience';
+import { Education } from './features/portfolio/education/education';
+import { Projects } from './features/portfolio/projects/projects';
+import { Contact } from './features/portfolio/contact/contact';
+import { Footer } from "./layout/footer/footer";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ParticleBackground],
+  standalone: true,
+  imports: [
+    Navbar,
+    Hero,
+    About,
+    Skills,
+    Experience,
+    Education,
+    Projects,
+    Contact,
+    Footer
+],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class App {
-  protected readonly title = signal('portfolio');
-}
+export class App {}

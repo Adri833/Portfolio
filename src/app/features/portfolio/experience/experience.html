@@ -1,0 +1,29 @@
+<section id="experience" class="experience" aria-labelledby="experience-title">
+  <div class="experience__container">
+    <app-section-title title="Experiencia" />
+
+    <ol class="experience__timeline">
+      @for (item of experience(); track item.id) {
+        <li class="experience__item">
+          <div class="experience__marker" aria-hidden="true"></div>
+          <div class="experience__content">
+            <div class="experience__header">
+              <h3 class="experience__role">{{ item.role }} — {{ item.company }}</h3>
+              <span class="experience__dates">
+                {{ item.startDate }} – {{ item.endDate ?? 'Actualidad' }}
+              </span>
+            </div>
+            <p class="experience__description">{{ item.description }}</p>
+            @if (item.technologies?.length) {
+              <ul class="experience__tech">
+                @for (tech of item.technologies; track tech) {
+                  <li><app-badge [label]="tech" /></li>
+                }
+              </ul>
+            }
+          </div>
+        </li>
+      }
+    </ol>
+  </div>
+</section>

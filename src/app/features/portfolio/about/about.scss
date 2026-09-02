@@ -1,0 +1,48 @@
+@use '../../../styles/mixins' as *;
+@use '../../../styles/breakpoints' as *;
+
+.about {
+  padding-block: var(--space-5);
+
+  @include respond-up($bp-md) {
+    padding-block: var(--space-7);
+  }
+
+  &__container {
+    @include container;
+  }
+
+  &__grid {
+    display: grid;
+    gap: var(--space-4);
+
+    @include respond-up($bp-md) {
+      grid-template-columns: 3fr 2fr;
+      gap: var(--space-6);
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    color: var(--text-secondary);
+    max-width: 65ch;
+  }
+
+  &__highlight {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    display: flex;
+    align-items: center;
+  }
+
+  &__highlight-text {
+    font-family: var(--font-heading);
+    font-size: var(--fs-md);
+    font-style: italic;
+    color: var(--text-primary);
+  }
+}
