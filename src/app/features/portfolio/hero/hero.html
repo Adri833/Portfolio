@@ -3,15 +3,28 @@
     <div class="hero__content">
       <h1 class="hero__title">Adrián Álvarez</h1>
       <p class="hero__tagline">
-        SOY (texto que se borra y escribe)
+        Soy <span class="hero__typewriter">{{ currentText() }}</span
+        ><span class="hero__cursor">|</span>
       </p>
       <div class="hero__actions">
-        <a class="btn btn--primary" href="#projects">Ver proyectos</a>
-        <a class="btn btn--secondary" href="#contact">Contactar</a>
+        <a class="btn btn--primary" [href]="cvUrl()" download="CV_Adrian_Alvarez.pdf">
+          <span class="btn__icon icon-download" aria-hidden="true"></span>
+          Descargar CV
+        </a>
+        <a class="btn btn--secondary" [href]="emailUrl()" target="_blank" rel="noopener noreferrer">
+          Contactar
+        </a>
       </div>
     </div>
-    <div class="hero__visual" aria-hidden="true">
-      <div class="hero__visual-shape"></div>
+    <div class="hero__visual">
+      <div class="hero__visual-shape">
+        <img
+          [src]="profileImage()"
+          alt="Adrián Álvarez Jiménez"
+          class="hero__avatar"
+          loading="eager"
+        />
+      </div>
     </div>
   </div>
 </section>

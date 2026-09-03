@@ -8,6 +8,14 @@ import { SocialLink } from '../models/social-link.model';
 
 @Injectable({ providedIn: 'root' })
 export class PortfolioDataService {
+  readonly profileImage = signal<string>(
+    'https://lh3.googleusercontent.com/d/1TWGgtnM16hxXQ5HLvkoGfiWBZtAqR07R',
+  );
+
+  readonly cvUrl = signal<string>(
+    'https://drive.google.com/uc?export=download&id=1FUytTInXiMEHus7xRFiOTxWNT9bagn1T',
+  );
+
   readonly navLinks = signal<NavLink[]>([
     { id: 'about', label: 'Sobre mí', href: '#about' },
     { id: 'skills', label: 'Skills', href: '#skills' },
@@ -97,13 +105,8 @@ export class PortfolioDataService {
   ]);
 
   readonly socialLinks = signal<SocialLink[]>([
-    { id: 'email', platform: 'email', label: 'Email', url: 'mailto:tu@email.com' },
-    { id: 'github', platform: 'github', label: 'GitHub', url: 'https://github.com/usuario' },
-    {
-      id: 'linkedin',
-      platform: 'linkedin',
-      label: 'LinkedIn',
-      url: 'https://linkedin.com/in/usuario',
-    },
+    { id: 'email', platform: 'email', label: 'Email', url: 'mailto:adrialvarez638@gmail.com' },
+    { id: 'github', platform: 'github', label: 'GitHub', url: 'https://github.com/adri833' },
+    { id: 'linkedin', platform: 'linkedin', label: 'LinkedIn', url: 'https://linkedin.com/in/adri833' },
   ]);
 }
