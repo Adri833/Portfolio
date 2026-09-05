@@ -13,7 +13,13 @@
                 {{ item.startDate }} – {{ item.endDate ?? 'Actualidad' }}
               </span>
             </div>
-            <p class="experience__description">{{ item.description }}</p>
+
+            <ul class="experience__achievements">
+              @for (achievement of item.achievements; track achievement) {
+                <li>{{ achievement }}</li>
+              }
+            </ul>
+
             @if (item.technologies?.length) {
               <ul class="experience__tech">
                 @for (tech of item.technologies; track tech) {

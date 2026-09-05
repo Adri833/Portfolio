@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Navbar } from './layout/navbar/navbar';
 import { Hero } from './features/portfolio/hero/hero';
 import { About } from './features/portfolio/about/about';
-import { Skills } from './features/portfolio/skills/skills';
 import { Experience } from './features/portfolio/experience/experience';
 import { Education } from './features/portfolio/education/education';
 import { Projects } from './features/portfolio/projects/projects';
@@ -16,7 +15,6 @@ import { Footer } from "./layout/footer/footer";
     Navbar,
     Hero,
     About,
-    Skills,
     Experience,
     Education,
     Projects,

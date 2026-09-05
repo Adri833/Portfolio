@@ -5,14 +5,15 @@
     <div class="about__grid">
       <div class="about__text">
         <p>
-          Especializado en el desarrollo de aplicaciones móviles con <b>Kotlin</b> y soluciones web con
-          <b>Angular</b>. Mi foco está en construir interfaces modernas con <b>Jetpack Compose</b> y gestionando
-          el estado y la asincronía mediante <b>Coroutines</b>, <b>RxJS</b> y <b>TypeScript</b>.
+          Especializado en el desarrollo de aplicaciones móviles con <b>Kotlin</b> y soluciones web
+          con <b>Angular</b>. Mi foco está en construir interfaces modernas con
+          <b>Jetpack Compose</b> y gestionando el estado y la asincronía mediante
+          <b>Coroutines</b> y <b>TypeScript</b>.
         </p>
         <p>
-          Aplico principios de <b>Clean Architecture</b> y <b>MVVM</b> en mis proyectos para garantizar un código
-          limpio, escalable y fácil de mantener. Cuento también con experiencia práctica en <b>Flutter</b>,
-          <b>Java</b> y <b>bases de datos relacionales</b>.
+          Aplico principios de <b>Clean Architecture</b> y <b>MVVM</b> en mis proyectos para
+          garantizar un código limpio, escalable y fácil de mantener. Cuento también con experiencia
+          práctica en <b>Flutter</b>, <b>Java</b> y <b>bases de datos relacionales</b>.
         </p>
         <p>
           Me motiva formar parte de equipos donde la calidad técnica, el aprendizaje continuo y las
@@ -21,9 +22,27 @@
       </div>
 
       <aside class="about__highlight">
-        <p class="about__highlight-text">
-          "Buen código es el que otra persona puede mantener sin preguntarte nada."
-        </p>
+        <h3 class="about__highlight-title">Skills</h3>
+        <div class="about__skills">
+          @for (group of skillGroups(); track group.category) {
+            <div class="about__skills-group">
+              <span class="about__skills-label">{{ group.label }}</span>
+              <ul class="about__skills-list">
+                @for (skill of group.skills; track skill.id) {
+                  <li class="about__skill-item">
+                    <img
+                      [src]="'assets/icons/skills/' + skill.icon + '.svg'"
+                      [alt]="skill.name"
+                      class="about__skill-icon"
+                      loading="lazy"
+                    />
+                    <span class="about__skill-name">{{ skill.name }}</span>
+                  </li>
+                }
+              </ul>
+            </div>
+          }
+        </div>
       </aside>
     </div>
   </div>

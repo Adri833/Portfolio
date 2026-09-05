@@ -17,17 +17,21 @@
     gap: var(--space-4);
 
     @include respond-up($bp-md) {
-      grid-template-columns: 3fr 2fr;
+      grid-template-columns: 2fr 3fr;
       gap: var(--space-6);
+      align-items: stretch;
     }
   }
 
   &__text {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: var(--space-3);
     color: var(--text-secondary);
     max-width: 65ch;
+    text-align: justify;
+    font-size: clamp(0.95rem, 0.85rem + 0.5vw, 1.15rem);
   }
 
   &__highlight {
@@ -36,13 +40,76 @@
     border-radius: var(--radius-lg);
     padding: var(--space-4);
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    text-align: center;
   }
 
-  &__highlight-text {
+  &__highlight-title {
     font-family: var(--font-heading);
     font-size: var(--fs-md);
-    font-style: italic;
     color: var(--text-primary);
+  }
+
+  &__skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  &__skills-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  &__skills-label {
+    font-size: var(--fs-md);
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  &__skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-2);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+    width: 56px;
+    text-align: center;
+  }
+
+  &__skill-icon {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    display: block;
+
+    @include respond-up($bp-md) {
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  &__skill-name {
+    font-size: var(--fs-xs);
+    color: var(--text-secondary);
+    line-height: 1.2;
+    word-break: break-word;
   }
 }

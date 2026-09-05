@@ -21,10 +21,11 @@ export class Hero implements OnInit, OnDestroy {
 
   // Lines to loop
   private readonly phrases = [
-    'desarrollador Full Stack',
+    'desarrollador Web & Mobile',
     'aprendiz constante',
     'amante del buen código',
     'detallista en UI/UX',
+    'creador de soluciones digitales',
   ];
 
   readonly currentText = signal<string>('');
